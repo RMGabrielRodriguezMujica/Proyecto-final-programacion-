@@ -1,0 +1,7 @@
+Reporte de Auditoria de Cambios
+Generado: 2026-07-20 13:35:22
+==================================================
+
+nuevos: []
+modificados: []
+eliminados: []

@@ -1,0 +1,32 @@
+{
+    "contactos.txt": {
+        "tamano": 341,
+        "modificado": "2026-07-20 13:14:50",
+        "hash": "8b7ab579593b0599d307f3dfa03e0613"
+    },
+    "datos_ventas.csv": {
+        "tamano": 144,
+        "modificado": "2026-07-20 13:14:50",
+        "hash": "dfba6fe9a63950a4fc24ea6ffc328a72"
+    },
+    "imagen_evento.jpg": {
+        "tamano": 161,
+        "modificado": "2026-07-20 13:14:50",
+        "hash": "89920bdc7525e0cff77ccbbe59292ed2"
+    },
+    "notas_reunion.txt": {
+        "tamano": 346,
+        "modificado": "2026-07-20 13:14:50",
+        "hash": "e7ba6171fd22e9921140be331b848ff7"
+    },
+    "reporte_enero.pdf": {
+        "tamano": 174,
+        "modificado": "2026-07-20 13:14:50",
+        "hash": "db82be809d6968d6750a6ad9c69bfcb4"
+    },
+    "script_backup.py": {
+        "tamano": 203,
+        "modificado": "2026-07-20 13:14:50",
+        "hash": "b03db27f2a9336a28fd79b76d85d3eb2"
+    }
+}
