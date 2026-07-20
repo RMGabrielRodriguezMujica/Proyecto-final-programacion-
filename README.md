@@ -1,4 +1,5 @@
 # 📂 KIT Automatización de Archivos
+<img width="1408" height="768" alt="Gemini_Generated_Image_eydhjdeydhjdeydh" src="https://github.com/user-attachments/assets/bde79283-7ef4-44ed-911a-111865fdd87b" />
 
 ¡Bienvenido al **Kit de Automatización de Archivos**! Este proyecto es una suite de herramientas desarrollada en Python diseñada para organizar, analizar, auditar y reportar de manera eficiente el estado y movimiento de tus archivos.
 
