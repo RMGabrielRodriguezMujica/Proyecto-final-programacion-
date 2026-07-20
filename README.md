@@ -69,6 +69,4 @@ pytest tests/
 
 ---
 
-## 📄 Licencia
 
-Este proyecto es de uso privado/código abierto (Actualiza esta sección según la licencia que desees otorgar).
