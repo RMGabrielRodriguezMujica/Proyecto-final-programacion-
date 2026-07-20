@@ -1,0 +1,14 @@
+Lista de contactos del proyecto
+
+Nombre: Ana Perez
+Correo: ana.perez@example.com
+Telefono: 0414-1234567
+Fecha de registro: 15/03/2024
+
+Nombre: Luis Gomez
+Correo: luis.gomez@correo.com
+Telefono: 0424-9876543
+Fecha de registro: 02/07/2024
+
+Nota importante: recordar enviar el reporte antes del 30/11/2025.
+Palabra clave: URGENTE

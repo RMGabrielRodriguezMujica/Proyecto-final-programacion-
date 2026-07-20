@@ -69,17 +69,17 @@ BANNER_ASCII = r"""
                 | ' /  | |  | |      SEBATIAN RODRIGUEZ -  SR
                 | . \  | |  | |      SEBATIAN MATTO     -  SM
                 |_|\_\|___| |_|  
-    _         _                        _   _                  _             
-   / \  _   _| |_ ___  _ __ ___   __ _| |_(_)____ _  ___(_) ___  _ __  
+    _         _                        _   _                    _             
+   / \  _   _| |_ ___  _ __ ___   __ _| |_(_)____ _    ___(_) ___  _ __  
   / _ \| | | | __/ _ \| '_ ` _ \ / _` | __| |_  / _` |/ __| |/ _ \| '_ \ 
  / ___ \ |_| | || (_) | | | | | | (_| | |_| |/ / (_| | (__| | (_) | | | |
 /_/   \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_/___\__,_|\___|_|\___/|_| |_|
 
                DE  A R C H I V O S  -  Proyecto Final Unidad VII
-
+"""
 
 def mostrar_banner():
-    """Imprime el banner ASCII de bienvenida con color, una sola vez al iniciar."""
+    """ Imprime el banner ASCII de bienvenida con color, una sola vez al iniciar. """
     print(f"{Color.CIAN}{Color.BOLD}{BANNER_ASCII}{Color.RESET}")
     print(f"{Color.GRIS}{'=' * 66}{Color.RESET}")
 

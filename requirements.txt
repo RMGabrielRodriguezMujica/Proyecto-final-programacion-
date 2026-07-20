@@ -1,0 +1,7 @@
+# El nucleo del sistema (organizer, analyzer, auditor, reports, utils, undo)
+# usa unicamente la biblioteca estandar de Python 3.
+#
+# La siguiente libreria es OPCIONAL: solo se usa para el extra de graficos
+# de barras en reports.generar_grafico_barras(). Si no esta instalada,
+# el programa lo detecta y sigue funcionando sin generar el grafico.
+matplotlib>=3.5

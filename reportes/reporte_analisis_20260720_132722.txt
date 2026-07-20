@@ -1,0 +1,8 @@
+Reporte de Analisis de Contenido
+Generado: 2026-07-20 13:27:22
+==================================================
+
+tipo_patron: telefonos
+resumen_por_archivo: {'contactos.txt': 2, 'datos_ventas.csv': 0, 'notas_reunion.txt': 0, 'script_backup.py': 0}
+coincidencias_unicas: ['0414-1234567', '0424-9876543']
+frecuencias: {'0414-1234567': 1, '0424-9876543': 1}
