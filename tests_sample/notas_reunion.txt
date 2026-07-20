@@ -1,0 +1,12 @@
+Notas de la reunion - Equipo de Programacion Modular
+
+Fecha: 27/11/2025
+Asistentes: Maria Lopez (maria.lopez@unimar.edu.ve), Carlos Diaz
+
+Temas tratados:
+- Revision del modulo organizer.py
+- Pendiente: pruebas del auditor de cambios
+- Palabra clave: PENDIENTE
+- Proxima reunion: 04/12/2025
+
+Contacto de soporte: soporte@unimar.edu.ve
