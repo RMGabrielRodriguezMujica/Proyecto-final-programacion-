@@ -17,6 +17,8 @@ CARPETA_REPORTES = "reportes"
 
 def _ruta_reporte(nombre_base, extension):
     """Construye una ruta unica (con timestamp) dentro de la carpeta 'reportes/'."""
+    # Cada reporte recibe una marca de tiempo para evitar sobrescribir archivos
+    # anteriores y facilitar su trazabilidad.
     try:
         os.makedirs(CARPETA_REPORTES, exist_ok=True)
     except PermissionError as e:
@@ -130,6 +132,7 @@ def generar_grafico_barras(datos, nombre_base, titulo, etiqueta_x="Categoria", e
         import matplotlib
         matplotlib.use("Agg")  # backend sin interfaz grafica, apto para consola
         import matplotlib.pyplot as plt
+        # Se dibuja el grafico en memoria y luego se guarda como archivo PNG.
     except ImportError:
         print_warn("matplotlib no esta instalado; se omite el grafico. "
                     "Instalalo con: pip install matplotlib")

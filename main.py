@@ -19,6 +19,9 @@ import auditor
 import reports
 import undo
 
+# Mapa de opciones del menu de organizacion: cada clave representa una opcion
+# numerica y cada valor contiene el nombre de la funcion del modulo y la
+# referencia callable que debe ejecutarse.
 FUNCIONES_CLASIFICACION = {
     "1": ("clasificar_por_extension", organizer.clasificar_por_extension),
     "2": ("clasificar_por_tamano", organizer.clasificar_por_tamano),
@@ -27,6 +30,8 @@ FUNCIONES_CLASIFICACION = {
 
 
 def menu_organizador():
+    # Menu principal del gestor de organizacion. Aqui se decide si el usuario
+    # quiere clasificar archivos, renombrarlos o deshacer la ultima accion.
     imprimir_titulo("Gestor de Organizacion de Archivos")
     print("1) Clasificar por extension")
     print("2) Clasificar por tamano")
@@ -61,6 +66,8 @@ def _clasificar_con_confirmacion(carpeta, opcion):
     que va a pasar ANTES de tocar un solo archivo. Solo si confirma, se
     aplica de verdad. Esto es una capa extra de seguridad sobre el dry-run.
     """
+    # Se ejecuta primero la operacion en modo de prueba para mostrar el efecto
+    # esperado sin modificar archivos reales.
     nombre_funcion, funcion = FUNCIONES_CLASIFICACION[opcion]
     preview = funcion(carpeta, dry_run=True)
 
@@ -89,6 +96,8 @@ def _clasificar_con_confirmacion(carpeta, opcion):
 
 
 def _renombrar_con_confirmacion(carpeta):
+    # El usuario ingresa un patron regex y el texto de reemplazo para cambiar
+    # los nombres de archivo de forma controlada.
     patron = input("Patron regex a buscar en los nombres de archivo: ")
     reemplazo = input("Texto de reemplazo: ")
 
@@ -137,6 +146,8 @@ def _ofrecer_grafico(datos, nombre_base, titulo):
 
 
 def menu_analizador():
+    # Menu del analizador: permite buscar patrones, obtener resumentes o
+    # identificar archivos duplicados dentro de una carpeta.
     imprimir_titulo("Analizador de Contenido")
     carpeta = pedir_ruta_valida("Ruta de la carpeta a analizar: ")
     print("\n1) Buscar correos electronicos")
@@ -164,6 +175,7 @@ def menu_analizador():
 
 
 def _buscar_patron(carpeta, opcion):
+    # Traduce la opcion elegida por el usuario a un tipo de analisis concreto.
     mapa_tipos = {"1": "correos", "2": "telefonos", "3": "fechas"}
     resultado = analyzer.analizar_carpeta(carpeta, mapa_tipos[opcion])
     print_info(f"Coincidencias unicas encontradas: {len(resultado['coincidencias_unicas'])}")
@@ -225,6 +237,8 @@ def _buscar_duplicados(carpeta):
 
 
 def menu_auditor():
+    # Menu del auditor: permite crear snapshots manuales y comparar una carpeta
+    # con el ultimo estado guardado para detectar cambios.
     imprimir_titulo("Auditor de Cambios")
     carpeta = pedir_ruta_valida("Ruta de la carpeta a auditar: ")
     print("\n1) Crear snapshot manual")
@@ -259,6 +273,8 @@ def menu_auditor():
 
 
 def mostrar_menu_principal():
+    # Presenta la pantalla inicial del programa con las tres areas principales
+    # disponibles para el usuario.
     print(f"\n{Color.BOLD}=== KIT MULTIFUNCIONAL DE AUTOMATIZACION DE ARCHIVOS ==={Color.RESET}")
     print("1) Gestor de Organizacion de Archivos")
     print("2) Analizador de Contenido")
@@ -267,6 +283,8 @@ def mostrar_menu_principal():
 
 
 def main():
+    # Inicio del programa: se muestra el banner, se valida el acceso de
+    # escritura y luego se mantiene el menu principal en ciclo.
     mostrar_banner()
     verificar_permisos_escritura()
     while True:

@@ -41,6 +41,8 @@ def clasificar_por_extension(carpeta, dry_run=False):
     cambios = []
     archivos = list(listar_archivos(carpeta))
 
+    # Cada archivo se agrupa segun su extension y, si el modo no es simulacion,
+    # se mueve a la carpeta destino correspondiente.
     for ruta in con_barra_progreso(archivos, "Clasificando por extension"):
         meta = obtener_metadata(ruta)
         ext = meta["extension"].replace(".", "").upper() or "SIN_EXTENSION"
@@ -71,6 +73,8 @@ def clasificar_por_tamano(carpeta, dry_run=False):
     cambios = []
     archivos = list(listar_archivos(carpeta))
 
+    # Se aplica la misma logica de clasificacion, pero usando umbrales de
+    # tamano para decidir en que categoria entra cada archivo.
     for ruta in con_barra_progreso(archivos, "Clasificando por tamano"):
         meta = obtener_metadata(ruta)
         if meta["tamano"] < UMBRAL_PEQUENO:
@@ -142,6 +146,8 @@ def renombrar_con_patron(carpeta, patron, reemplazo, dry_run=False):
     cambios_undo = []
     archivos = list(listar_archivos(carpeta))
 
+    # Se busca coincidir el nombre actual con la expresion regular y se calcula
+    # el nuevo nombre para luego registrar la operacion de undo si aplica.
     for ruta in con_barra_progreso(archivos, "Renombrando archivos"):
         nombre_actual = os.path.basename(ruta)
         if regex.search(nombre_actual):

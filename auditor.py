@@ -32,6 +32,8 @@ def crear_snapshot(carpeta, nombre_snapshot=None):
             f"'Solo lectura' de la carpeta. Detalle: {e}"
         )
     estado = {}
+    # Se construye un estado resumido de cada archivo para poder comparar despues
+    # si hubo cambios en nombre, tamano, fecha o contenido hash.
     for ruta in listar_archivos(carpeta):
         meta = obtener_metadata(ruta)
         estado[meta["nombre"]] = {

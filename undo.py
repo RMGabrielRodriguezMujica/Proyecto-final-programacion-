@@ -73,7 +73,8 @@ def deshacer_ultima_operacion():
     exitos, errores = [], []
     carpetas_a_revisar = set()
 
-    # Se revierte en orden inverso al que se aplicaron los cambios
+    # Se revierte en orden inverso al que se aplicaron los cambios, para que
+    # el estado final vuelva a quedar coherente con el punto anterior.
     for cambio in reversed(ultima["cambios"]):
         try:
             if cambio["tipo"] == "mover":

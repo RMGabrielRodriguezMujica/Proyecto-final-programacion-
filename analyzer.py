@@ -16,14 +16,16 @@ from utils import (
     calcular_hash_archivo, formatear_tamano, con_barra_progreso, print_info,
 )
 
-# Patrones de expresiones regulares disponibles para el analisis
+# Patrones de busqueda disponibles para el analizador de contenido.
+# Cada clave representa un tipo de dato que se desea detectar dentro del texto.
 PATRONES = {
     "correos": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}",
     "telefonos": r"(?:\+?\d{1,3}[- ]?)?\(?\d{3,4}\)?[- ]?\d{3}[- ]?\d{4}",
     "fechas": r"\b\d{1,2}[/-]\d{1,2}[/-]\d{2,4}\b",
 }
 
-# Extensiones que se consideran archivos de texto plano para el analisis
+# Se consideran archivos de texto plano aquellos con extensiones tipicas
+# para documentos y codigo fuente, ya que el analizador trabaja sobre texto legible.
 EXTENSIONES_TEXTO = {".txt", ".csv", ".log", ".md", ".py", ".json"}
 
 
@@ -76,6 +78,8 @@ def analizar_carpeta(carpeta, tipo_patron="correos"):
     coincidencias_unicas = set()
     contador_global = Counter()
 
+    # Se recorre cada archivo de la carpeta para buscar el patron solicitado.
+    # Si el archivo no parece ser texto, se omite para evitar errores innecesarios.
     for ruta in listar_archivos(carpeta):
         if not _es_texto_probable(ruta):
             continue
